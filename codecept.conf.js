@@ -11,16 +11,30 @@ exports.config = {
   tests: './*_test.js',
   output: './output',
   helpers: {
-    Playwright: {
-      url: 'http://localhost',
-      show: true,
-      browser: 'chromium'
-    }
+    WebDriver: {
+      url: 'https://myapp.com',
+      browser: 'chrome',
+      host: '127.0.0.1',
+      port: 4444,
+      restart: false,
+      windowSize: '1920x1680',
+      desiredCapabilities: {
+        chromeOptions: {
+          args: [ /*"--headless",*/ "--disable-gpu", "--no-sandbox" ]
+        }
+      }
+    },
   },
   include: {
     I: './steps_file.js'
   },
   bootstrap: null,
   mocha: {},
-  name: 'codecept'
+  name: 'codecept',
+  plugins: {
+    wdio: {
+      enabled: true,
+      services: ['selenium-standalone']
+    }
+  }
 }

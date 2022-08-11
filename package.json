@@ -14,7 +14,9 @@
         "@codeceptjs/configure": "^0.8.0",
         "@codeceptjs/examples": "^1.2.1",
         "@codeceptjs/ui": "^0.4.7",
+        "@wdio/selenium-standalone-service": "^7.20.8",
         "codeceptjs": "^3.3.4",
-        "playwright": "^1.24.2"
+        "playwright": "^1.24.2",
+        "webdriverio": "^6.12.1"
     }
 }
